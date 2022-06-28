@@ -8,4 +8,4 @@ const fatorial = (num) => {
     return num
 }
 
-console.log(fatorial(389))
+console.log(fatorial(10))
