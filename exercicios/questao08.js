@@ -10,31 +10,31 @@ String: “10 20 20 8 25 3 0 30 1”
 Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
 aconteceu no sétimo jogo.) */
 
-function c (str) {
-    const jogos = str.split(",")
-    const jogos2 = jogos.map(Number)
-    let recordProprio, recordsBatidos = 0, piorPartida
+function c(str) {
+  const jogos = str.split(",");
+  const jogos2 = jogos.map(Number);
+  let recordProprio,
+    recordsBatidos = 0,
+    piorPartida;
 
-    for (let i in jogos2) {
-        if (i == 0){
-            recordProprio = jogos2[i]
-            piorPartida = i
-        } 
-        else {
-            if (jogos2[i]>recordProprio){
-                recordProprio = jogos2[i]
-                recordsBatidos++
-            }
-            if (jogos2[i]<jogos2[piorPartida]){
-                piorPartida = i
-            }
-        
-        }
+  for (let i in jogos2) {
+    if (i == 0) {
+      recordProprio = jogos2[i];
+      piorPartida = i;
+    } else {
+      if (jogos2[i] > recordProprio) {
+        recordProprio = jogos2[i];
+        recordsBatidos++;
+      }
+      if (jogos2[i] < jogos2[piorPartida]) {
+        piorPartida = i;
+      }
     }
-    piorPartida++
-    const resultado = [recordsBatidos, piorPartida]
+  }
+  piorPartida++;
+  const resultado = [recordsBatidos, piorPartida];
 
-    return resultado
+  return resultado;
 }
 
-console.log(c("10, 20, 20, 8, 25, 3, 0, 30, 1"))
+console.log(c("10, 20, 20, 8, 25, 3, 0, 30, 1"));
