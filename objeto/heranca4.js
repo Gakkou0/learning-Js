@@ -13,3 +13,10 @@ MeuObjeto.prototype.falar = function () {
 }
 
 obj1.falar()
+
+const obj3 = {}
+obj3.__proto__ = MeuObjeto.prototype
+obj3.nome = 'obj3'
+obj3.falar()
+
+console.log((new MeuObjeto).__proto__ === MeuObjeto.prototype)
